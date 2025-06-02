@@ -3,9 +3,55 @@
 
 #include <iostream>
 
+using namespace std;
+
+
+double solution(int scores[], int scoresSize){
+
+	int sum = 0;
+	int i = 0;
+	while ( i < scoresSize)
+	{
+		cout << "점수를 입력 하세요: ";
+		cin >> scores[i];
+		if (0 <=scores[i] && scores[i] <= 100) {
+			
+			sum += scores[i];
+
+			cout << "현재 배열값: " << scores[i]<< endl;
+			i++;
+		}
+		else {
+			cout << "0미만 100초과의 값을 넣을 수 없습니다." << endl;
+			
+		}
+		
+	}
+	return sum;
+}
+
+double solution2 (int sum, int scoresSize){
+
+	double average = 0;
+	return average = sum / scoresSize;
+	
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	int scores[5];
+	int *p = scores;
+	int scoresSize = sizeof(scores) / sizeof(scores[0]);
+	double sum = 0;
+	cout << "scores의 배열: " << scores << " *p 의 값: " << p<< endl;
+	
+	
+	sum = solution(p, scoresSize);
+	cout << "입력받은 점수 합계: " << sum  <<"점" <<  " 평균: " << solution2(sum, scoresSize) << "점" <<endl;
+	for (int i = 0; i < scoresSize; i++) {
+		cout << scores[i] << " ";
+	}
+
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
