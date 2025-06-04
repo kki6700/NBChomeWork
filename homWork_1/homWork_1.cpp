@@ -47,11 +47,51 @@ int main()
 	
 	
 	sum = solution(p, scoresSize);
-	cout << "입력받은 점수 합계: " << sum  <<"점" <<  " 평균: " << solution2(sum, scoresSize) << "점" <<endl;
-	for (int i = 0; i < scoresSize; i++) {
-		cout << scores[i] << " ";
-	}
 
+	int temp = 0;
+	cout << "입력받은 점수 합계: " << sum  <<"점" <<  " 평균: " << solution2(sum, scoresSize) << "점" <<endl;
+	//버블 정렬 오름차순
+	for (int i = 0; i < scoresSize; i++) {
+		
+		//j가 (score size -1 -i) 보다 작을때 마다 실행
+		for (int j = 0; j < (scoresSize - 1) - i; j++) {
+			//현 j번째 요소와 j+1 번째 요소를 비교해서 j번째 요소가 j+1 요소보다 작다면 실행한다.
+			if (scores[j] < scores[j + 1]) {
+				
+				//temp에 j번째 요소를 임시 저장
+				temp = scores[j];
+				//j+1번째 요소를 j번째 요소에 치환한다. 
+				scores[j] = scores[j + 1];
+				//j+1요소에는 temp요소로 치환한다.
+				scores[j + 1] = temp;
+			}
+		}
+	}
+	cout << "오름차순:";
+	for (int i = 0; i < scoresSize; i++) {
+		cout <<" "<< scores[i];	
+	}
+	cout<< endl;
+	//버블정렬 내림차순
+	for (int i = 0; i < scoresSize; i++) {
+
+		for (int j = 0; j < (scoresSize - 1) - i; j++) {
+			// 현 j번째 요소와 j + 1 번째 요소를 비교해서 j번째 요소가 j + 1 요소보다 크다면 실행한다.
+			if (scores[j] > scores[j + 1]) {
+
+				temp = scores[j];
+				scores[j] = scores[j + 1];
+				scores[j + 1] = temp;
+
+
+			}
+		}
+	}
+	cout << "내림차순:";
+	for (int i = 0; i < scoresSize; i++) {
+		cout << " " << scores[i];	
+	}
+	cout << endl;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
