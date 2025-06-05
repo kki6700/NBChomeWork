@@ -1,6 +1,4 @@
-﻿// homWork_1.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
+﻿
 #include <iostream>
 
 using namespace std;
@@ -50,7 +48,7 @@ int main()
 
 	int temp = 0;
 	cout << "입력받은 점수 합계: " << sum  <<"점" <<  " 평균: " << solution2(sum, scoresSize) << "점" <<endl;
-	//버블 정렬 오름차순
+	//버블 정렬 내림차순
 	for (int i = 0; i < scoresSize; i++) {
 		
 		//j가 (score size -1 -i) 보다 작을때 마다 실행
@@ -67,12 +65,12 @@ int main()
 			}
 		}
 	}
-	cout << "오름차순:";
+	cout << "내림차순:";
 	for (int i = 0; i < scoresSize; i++) {
 		cout <<" "<< scores[i];	
 	}
 	cout<< endl;
-	//버블정렬 내림차순
+	//버블정렬 오름차순
 	for (int i = 0; i < scoresSize; i++) {
 
 		for (int j = 0; j < (scoresSize - 1) - i; j++) {
@@ -87,7 +85,7 @@ int main()
 			}
 		}
 	}
-	cout << "내림차순:";
+	cout << "오름차순:";
 	for (int i = 0; i < scoresSize; i++) {
 		cout << " " << scores[i];	
 	}
